@@ -1,8 +1,11 @@
 # Inherit device configuration
-$(call inherit-product, device/samsung/ancora/ancora.mk)
+$(call inherit-product, device/samsung/ancora/full_ancora.mk)
 
 # Inherit from our custom product configuration
 $(call inherit-product, vendor/omni/config/common.mk)
+
+# Release name
+PRODUCT_RELEASE_NAME := ancora
 
 # Device identifier. This must come after all inclusions
 PRODUCT_NAME := omni_ancora
