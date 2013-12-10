@@ -1,4 +1,5 @@
-# Copyright (C) 2012 The CyanogenMod Project
+# Copyright (C) 2013 The CyanogenMod Project
+# Copyright (C) 2013 The OmniRom Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -16,9 +17,11 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 $(call inherit-product, $(LOCAL_PATH)/ancora.mk)
 
 # The gps config appropriate for this device
-$(call inherit-product, device/common/gps/gps_eu_supl.mk)
+PRODUCT_COPY_FILES += \
+$(LOCAL_PATH)/gps/gps.conf:system/etc/gps.conf
 
 # Set those variables here to overwrite the inherited values.
+
 PRODUCT_NAME := full_ancora
 PRODUCT_DEVICE := ancora
 PRODUCT_BRAND := samsung
